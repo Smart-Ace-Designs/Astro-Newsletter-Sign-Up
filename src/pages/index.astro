@@ -7,19 +7,19 @@ import iconList from "@/assets/icon-list.svg";
 ---
 
 <MainLayout title="Frontend Mentor | Newsletter Sign Up">
-  <div class="bg-sad-white h-[840px] w-[375px]">
+  <div class="h-[840px] w-[375px] bg-sad-white">
     <div>
       <Image src={illustration} alt={"Sign Up"} loading={"eager"} />
     </div>
     <section class="mx-7 my-7">
-      <h1 class="text-sad-dark-slate-grey mb-3 text-[2.5rem] font-bold">
+      <h1 class="mb-3 text-[2.5rem] font-bold text-sad-dark-slate-grey">
         Stay updated!
       </h1>
-      <p class="text-sad-dark-slate-grey mb-7">
+      <p class="mb-7 text-sad-dark-slate-grey">
         Join 60,000+ product managers receiving monthly updates on:
       </p>
       <div
-        class="items-top text-sad-dark-slate-grey mb-10 grid grid-cols-[10%,90%] gap-2"
+        class="items-top mb-10 grid grid-cols-[10%,90%] gap-2 text-sad-dark-slate-grey"
       >
         <Image src={iconList} alt={"Checkmark"} loading={"eager"} />
         <p>Product discovery and building what matters</p>
@@ -28,21 +28,24 @@ import iconList from "@/assets/icon-list.svg";
         <Image src={iconList} alt={"Checkmark"} loading={"eager"} />
         <p>And much more!</p>
       </div>
-      <form>
-        <div class="flex flex-col">
+      <form novalidate>
+        <div class="mb-6 flex flex-col">
           <label
             for="email"
-            class="text-sad-dark-slate-grey mb-3 text-xs font-bold"
+            class="mb-3 text-xs font-bold text-sad-dark-slate-grey"
             >Email address</label
           >
           <input
             type="email"
             name="email"
-            class="border-sad-grey text-sad-grey h-14 rounded-lg border px-6 py-4"
-            title="email@company.com"
+            class="h-14 rounded-lg border border-gray-300 px-6 py-4 text-sad-grey"
+            placeholder="email@company.com"
           />
         </div>
-        <button>Subscribe to monthly newsletter</button>
+        <button
+          class="h-14 w-full rounded-lg border bg-sad-dark-slate-grey text-sad-white"
+          >Subscribe to monthly newsletter</button
+        >
       </form>
     </section>
   </div>
