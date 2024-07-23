@@ -28,7 +28,7 @@ import iconList from "@/assets/icon-list.svg";
         <Image src={iconList} alt={"Checkmark"} loading={"eager"} />
         <p>And much more!</p>
       </div>
-      <form novalidate>
+      <form novalidate id="form">
         <div class="mb-6 flex flex-col">
           <label
             for="email"
@@ -36,6 +36,7 @@ import iconList from "@/assets/icon-list.svg";
             >Email address</label
           >
           <input
+            id="email"
             type="email"
             name="email"
             class="h-14 rounded-lg border border-gray-300 px-6 py-4 text-sad-grey"
@@ -43,6 +44,7 @@ import iconList from "@/assets/icon-list.svg";
           />
         </div>
         <button
+          type="submit"
           class="h-14 w-full rounded-lg border bg-sad-dark-slate-grey text-sad-white"
           >Subscribe to monthly newsletter</button
         >
@@ -50,3 +52,14 @@ import iconList from "@/assets/icon-list.svg";
     </section>
   </div>
 </MainLayout>
+
+<script>
+  import { actions } from "astro:actions";
+
+  const form = document.getElementById("form") as HTMLFormElement;
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    await actions.newsletter(formData);
+  });
+</script>
