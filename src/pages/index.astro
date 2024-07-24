@@ -2,16 +2,30 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import Image from "astro/components/Image.astro";
 
-import illustration from "@/assets/illustration-sign-up-mobile.svg";
+import illustrationMobile from "@/assets/illustration-sign-up-mobile.svg";
+import illustrationDesktop from "@/assets/illustration-sign-up-desktop.svg";
 import iconList from "@/assets/icon-list.svg";
 ---
 
 <MainLayout title="Frontend Mentor | Newsletter Sign Up">
-  <div class="h-[840px] w-[375px] bg-sad-white">
-    <div>
-      <Image src={illustration} alt={"Sign Up"} loading={"eager"} />
+  <div
+    class="h-[840px] w-[375px] bg-sad-white md:flex md:h-[660px] md:w-[920px] md:flex-row-reverse md:gap-4 md:rounded-[2.5rem] md:p-6"
+  >
+    <div class="md:w-1/2">
+      <Image
+        src={illustrationMobile}
+        alt={"Sign Up"}
+        loading={"eager"}
+        class="md:hidden"
+      />
+      <Image
+        src={illustrationDesktop}
+        alt={"Sign Up"}
+        loading={"eager"}
+        class="hidden md:block"
+      />
     </div>
-    <section class="mx-7 my-7">
+    <section class="mx-7 my-7 md:w-1/2">
       <h1 class="mb-3 text-[2.5rem] font-bold text-sad-dark-slate-grey">
         Stay updated!
       </h1>
