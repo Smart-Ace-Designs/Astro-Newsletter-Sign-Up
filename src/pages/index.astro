@@ -82,7 +82,6 @@ import iconList from "@/assets/icon-list.svg";
   import { actions } from "astro:actions";
 
   let errorState: boolean = false;
-
   const form = document.getElementById("form") as HTMLFormElement;
   const errorLabel = document.getElementById(
     "errormessage",
@@ -104,26 +103,21 @@ import iconList from "@/assets/icon-list.svg";
 
   form?.addEventListener("submit", async (e) => {
     e.preventDefault();
+
     const formData = new FormData(form);
-    const { data, error } = await actions.newsletter.safe(formData);
+    const { data } = await actions.newsletter.safe(formData);
+
     if (data) {
-      errorState = false;
-      errorLabel.classList.add("hidden");
-      email.classList.remove(
-        "bg-sad-tomato",
-        "text-sad-tomato",
-        "bg-opacity-20",
-        "border-sad-tomato",
-      );
-    } else {
-      errorState = true;
-      errorLabel.classList.remove("hidden");
-      email.classList.add(
-        "bg-sad-tomato",
-        "text-sad-tomato",
-        "bg-opacity-20",
-        "border-sad-tomato",
-      );
+      return (window.location.href = "/confirmation");
     }
+
+    errorState = true;
+    errorLabel.classList.remove("hidden");
+    email.classList.add(
+      "bg-sad-tomato",
+      "text-sad-tomato",
+      "bg-opacity-20",
+      "border-sad-tomato",
+    );
   });
 </script>
