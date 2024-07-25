@@ -46,17 +46,26 @@ import iconList from "@/assets/icon-list.svg";
       </div>
       <form novalidate id="form">
         <div class="mb-6 flex flex-col">
-          <label
-            for="email"
-            class="mb-3 text-xs font-bold text-sad-dark-slate-grey"
-            >Email address</label
-          >
+          <div class="flex justify-between">
+            <label
+              for="email"
+              class="mb-3 text-xs font-bold text-sad-dark-slate-grey"
+              >Email address</label
+            >
+            <label
+              id="errormessage"
+              for="email"
+              class="mb-3 hidden text-xs font-bold text-sad-tomato"
+              >Valid email required</label
+            >
+          </div>
           <input
             id="email"
             type="email"
             name="email"
             class="h-14 rounded-lg border border-gray-300 px-6 py-4 text-sad-grey"
             placeholder="email@company.com"
+            autocomplete="off"
           />
         </div>
         <button
@@ -72,10 +81,49 @@ import iconList from "@/assets/icon-list.svg";
 <script>
   import { actions } from "astro:actions";
 
+  let errorState: boolean = false;
+
   const form = document.getElementById("form") as HTMLFormElement;
+  const errorLabel = document.getElementById(
+    "errormessage",
+  ) as HTMLLabelElement;
+  const email = document.getElementById("email") as HTMLInputElement;
+
+  email?.addEventListener("click", () => {
+    if (errorState) {
+      errorLabel.classList.add("hidden");
+      email.classList.remove(
+        "bg-sad-tomato",
+        "text-sad-tomato",
+        "bg-opacity-20",
+        "border-sad-tomato",
+      );
+      email.value = "";
+    }
+  });
+
   form?.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
-    await actions.newsletter(formData);
+    const { data, error } = await actions.newsletter.safe(formData);
+    if (data) {
+      errorState = false;
+      errorLabel.classList.add("hidden");
+      email.classList.remove(
+        "bg-sad-tomato",
+        "text-sad-tomato",
+        "bg-opacity-20",
+        "border-sad-tomato",
+      );
+    } else {
+      errorState = true;
+      errorLabel.classList.remove("hidden");
+      email.classList.add(
+        "bg-sad-tomato",
+        "text-sad-tomato",
+        "bg-opacity-20",
+        "border-sad-tomato",
+      );
+    }
   });
 </script>
