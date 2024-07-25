@@ -88,7 +88,7 @@ import iconList from "@/assets/icon-list.svg";
   ) as HTMLLabelElement;
   const email = document.getElementById("email") as HTMLInputElement;
 
-  email?.addEventListener("click", () => {
+  email?.addEventListener("focus", () => {
     if (errorState) {
       errorLabel.classList.add("hidden");
       email.classList.remove(
