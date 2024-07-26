@@ -1,7 +1,34 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
+import Image from "astro/components/Image.astro";
+
+import success from "@/assets/icon-success.svg";
+const email: string = "ash@loremcompany.com";
 ---
 
 <MainLayout title="Frontend Mentor | Newsletter Sign Up">
-  <p>Success!</p>
+  <div
+    class="h-[810px] w-[375px] bg-sad-white md:flex md:h-[640px] md:w-[920px] md:flex-row-reverse md:items-center md:justify-center md:gap-4 md:rounded-[2.5rem]"
+  >
+    <div class="mx-6 mt-36">
+      <Image src={success} alt={"Success!"} loading={"eager"} class="mb-8" />
+      <section>
+        <h1
+          class="mb-6 text-[2.5rem] font-bold leading-none text-sad-charcoal-grey md:text-[3.5rem]"
+        >
+          Thanks for subscribing!
+        </h1>
+        <p class="mb-[17.3rem]">
+          A confirmation email has been sent to <span class="font-bold"
+            >{email}</span
+          >. Please open it and click the button inside to confirm your
+          subscription
+        </p>
+        <button
+          class="h-14 w-full rounded-lg border bg-sad-charcoal-grey text-sad-white hover:bg-sad-tomato hover:text-sad-white hover:shadow-xl hover:shadow-sad-tomato"
+          >Dismiss message</button
+        >
+      </section>
+    </div>
+  </div>
 </MainLayout>
