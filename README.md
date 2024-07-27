@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/Smart-Ace-Designs/Astro-Newsletter-Sign-Up)
-- Live Site URL: [Netlify](https://your-live-site-url.com)
+- Live Site URL: [Netlify](https://smartacedesigns-astro-newsletter-su.netlify.app/)
 
 ## My process
 
