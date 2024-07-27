@@ -28,6 +28,7 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 
 ### Screenshot
+![newsletter-sign-up](https://github.com/user-attachments/assets/aa578f5d-0ec2-4700-8c6c-c198748621f3)
 
 ### Links
 
