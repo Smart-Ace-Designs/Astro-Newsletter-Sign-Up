@@ -5,11 +5,13 @@ import Image from "astro/components/Image.astro";
 import illustrationMobile from "@/assets/illustration-sign-up-mobile.svg";
 import illustrationDesktop from "@/assets/illustration-sign-up-desktop.svg";
 import iconList from "@/assets/icon-list.svg";
+import iconsSuccess from "@/assets/icon-success.svg";
 ---
 
 <MainLayout title="Frontend Mentor | Newsletter Sign Up">
   <div
     class="h-[840px] w-[375px] bg-sad-white md:flex md:h-[640px] md:w-[920px] md:flex-row-reverse md:items-center md:justify-center md:gap-4 md:rounded-[2.5rem]"
+    id="signup"
   >
     <div class="md:w-1/2">
       <Image
@@ -76,17 +78,54 @@ import iconList from "@/assets/icon-list.svg";
       </form>
     </section>
   </div>
+  <div
+    class="hidden h-[810px] w-[375px] bg-sad-white md:h-[510px] md:w-[500px] md:rounded-[2.5rem]"
+    id="confirmation"
+  >
+    <div class="mx-6 mt-36 md:mx-12 md:my-12">
+      <Image
+        src={iconsSuccess}
+        alt={"Success!"}
+        loading={"eager"}
+        class="mb-8"
+      />
+      <section>
+        <h1
+          class="mb-6 text-[2.5rem] font-bold leading-none text-sad-dark-slate-grey md:text-[3.5rem]"
+        >
+          Thanks for subscribing!
+        </h1>
+        <p class="mb-[17.3rem] text-sad-dark-slate-grey md:mb-12">
+          A confirmation email has been sent to <span
+            id="emailresponse"
+            class="font-bold"></span>. Please open it and click the button
+          inside to confirm your subscription
+        </p>
+        <button
+          id="dismiss"
+          class="h-14 w-full rounded-lg border bg-sad-dark-slate-grey text-sad-white hover:border-sad-tomato hover:bg-sad-tomato hover:text-sad-white hover:shadow hover:shadow-sad-tomato"
+          >Dismiss message</button
+        >
+      </section>
+    </div>
+  </div>
 </MainLayout>
 
 <script>
   import { actions } from "astro:actions";
 
   let errorState: boolean = false;
+
   const form = document.getElementById("form") as HTMLFormElement;
   const errorLabel = document.getElementById(
     "errormessage",
   ) as HTMLLabelElement;
   const email = document.getElementById("email") as HTMLInputElement;
+  const signup = document.getElementById("signup") as HTMLDivElement;
+  const confirmation = document.getElementById(
+    "confirmation",
+  ) as HTMLDivElement;
+  const dismiss = document.getElementById("dismiss") as HTMLButtonElement;
 
   email?.addEventListener("focus", () => {
     if (errorState) {
@@ -108,7 +147,12 @@ import iconList from "@/assets/icon-list.svg";
     const { data } = await actions.newsletter.safe(formData);
 
     if (data) {
-      return (window.location.href = "/confirmation");
+      (document.getElementById("emailresponse") as HTMLSpanElement).innerHTML =
+        email.value;
+      signup.classList.add("hidden");
+      signup.classList.remove("md:flex");
+      confirmation.classList.add("md:flex");
+      confirmation.classList.remove("hidden");
     }
 
     errorState = true;
@@ -119,5 +163,20 @@ import iconList from "@/assets/icon-list.svg";
       "bg-opacity-20",
       "border-sad-tomato",
     );
+  });
+
+  dismiss?.addEventListener("click", () => {
+    errorLabel.classList.add("hidden");
+    email.classList.remove(
+      "bg-sad-tomato",
+      "text-sad-tomato",
+      "bg-opacity-20",
+      "border-sad-tomato",
+    );
+    email.value = "";
+    signup.classList.add("md:flex");
+    signup.classList.remove("hidden");
+    confirmation.classList.add("hidden");
+    confirmation.classList.remove("md:flex");
   });
 </script>
