@@ -144,7 +144,7 @@ import iconsSuccess from "@/assets/icon-success.svg";
     e.preventDefault();
 
     const formData = new FormData(form);
-    const { data } = await actions.newsletter.safe(formData);
+    const { data } = await actions.newsletter(formData);
 
     if (data) {
       (document.getElementById("emailresponse") as HTMLSpanElement).innerHTML =
