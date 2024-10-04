@@ -9,106 +9,108 @@ import iconsSuccess from "@/assets/icon-success.svg";
 ---
 
 <MainLayout title="Frontend Mentor | Newsletter Sign Up">
-  <div
-    class="h-[840px] w-[375px] bg-sad-white md:flex md:h-[640px] md:w-[920px] md:flex-row-reverse md:items-center md:justify-center md:gap-4 md:rounded-[2.5rem]"
-    id="signup"
-  >
-    <div class="md:w-1/2">
-      <Image
-        src={illustrationMobile}
-        alt={"Sign Up"}
-        loading={"eager"}
-        class="md:hidden"
-      />
-      <Image
-        src={illustrationDesktop}
-        alt={"Sign Up"}
-        loading={"eager"}
-        class="hidden md:block"
-      />
-    </div>
-    <section class="mx-7 my-7 md:w-1/2 md:px-8">
-      <h1
-        class="mb-3 text-[2.5rem] font-bold text-sad-dark-slate-grey md:text-[3.5rem]"
-      >
-        Stay updated!
-      </h1>
-      <p class="mb-7 text-sad-dark-slate-grey">
-        Join 60,000+ product managers receiving monthly updates on:
-      </p>
-      <div
-        class="items-top mb-10 grid grid-cols-[10%,90%] gap-2 text-sad-dark-slate-grey"
-      >
-        <Image src={iconList} alt={"Checkmark"} loading={"eager"} />
-        <p>Product discovery and building what matters</p>
-        <Image src={iconList} alt={"Checkmark"} loading={"eager"} />
-        <p>Measuring to ensure updates are a success</p>
-        <Image src={iconList} alt={"Checkmark"} loading={"eager"} />
-        <p>And much more!</p>
+  <main class="flex min-h-screen items-center justify-center">
+    <div
+      class="h-[840px] w-[375px] bg-sad-white md:flex md:h-[640px] md:w-[920px] md:flex-row-reverse md:items-center md:justify-center md:gap-4 md:rounded-[2.5rem]"
+      id="signup"
+    >
+      <div class="md:w-1/2">
+        <Image
+          src={illustrationMobile}
+          alt={"Sign Up"}
+          loading={"eager"}
+          class="md:hidden"
+        />
+        <Image
+          src={illustrationDesktop}
+          alt={"Sign Up"}
+          loading={"eager"}
+          class="hidden md:block"
+        />
       </div>
-      <form novalidate id="form">
-        <div class="mb-6 flex flex-col">
-          <div class="flex justify-between">
-            <label
-              for="email"
-              class="mb-3 text-xs font-bold text-sad-dark-slate-grey"
-              >Email address</label
-            >
-            <label
-              id="errormessage"
-              for="email"
-              class="mb-3 hidden text-xs font-bold text-sad-tomato"
-              >Valid email required</label
-            >
-          </div>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            class="h-14 rounded-lg border border-gray-300 px-6 py-4 text-sad-grey"
-            placeholder="email@company.com"
-            autocomplete="off"
-          />
-        </div>
-        <button
-          type="submit"
-          class="h-14 w-full rounded-lg border bg-sad-dark-slate-grey text-sad-white hover:border-none hover:bg-gradient-to-l hover:from-sad-tomato hover:to-rose-400 hover:text-sad-white hover:shadow-lg hover:shadow-rose-300"
-          >Subscribe to monthly newsletter</button
+      <section class="mx-7 my-7 md:w-1/2 md:px-8">
+        <h1
+          class="mb-3 text-[2.5rem] font-bold text-sad-dark-slate-grey md:text-[3.5rem]"
         >
-      </form>
-    </section>
-  </div>
-  <div
-    class="hidden h-[810px] w-[375px] bg-sad-white md:h-[510px] md:w-[500px] md:rounded-[2.5rem]"
-    id="confirmation"
-  >
-    <div class="mx-6 mt-36 md:mx-12 md:my-12">
-      <Image
-        src={iconsSuccess}
-        alt={"Success!"}
-        loading={"eager"}
-        class="mb-8"
-      />
-      <section>
-        <h2
-          class="mb-6 text-[2.5rem] font-bold leading-none text-sad-dark-slate-grey md:text-[3.5rem]"
-        >
-          Thanks for subscribing!
-        </h2>
-        <p class="mb-[17.3rem] text-sad-dark-slate-grey md:mb-12">
-          A confirmation email has been sent to <span
-            id="emailresponse"
-            class="font-bold"></span>. Please open it and click the button
-          inside to confirm your subscription
+          Stay updated!
+        </h1>
+        <p class="mb-7 text-sad-dark-slate-grey">
+          Join 60,000+ product managers receiving monthly updates on:
         </p>
-        <button
-          id="dismiss"
-          class="h-14 w-full rounded-lg border bg-sad-dark-slate-grey text-sad-white hover:border-none hover:bg-gradient-to-l hover:from-sad-tomato hover:to-rose-400 hover:text-sad-white hover:shadow-lg hover:shadow-rose-300"
-          >Dismiss message</button
+        <div
+          class="items-top mb-10 grid grid-cols-[10%,90%] gap-2 text-sad-dark-slate-grey"
         >
+          <Image src={iconList} alt={"Checkmark"} loading={"eager"} />
+          <p>Product discovery and building what matters</p>
+          <Image src={iconList} alt={"Checkmark"} loading={"eager"} />
+          <p>Measuring to ensure updates are a success</p>
+          <Image src={iconList} alt={"Checkmark"} loading={"eager"} />
+          <p>And much more!</p>
+        </div>
+        <form novalidate id="form">
+          <div class="mb-6 flex flex-col">
+            <div class="flex justify-between">
+              <label
+                for="email"
+                class="mb-3 text-xs font-bold text-sad-dark-slate-grey"
+                >Email address</label
+              >
+              <label
+                id="errormessage"
+                for="email"
+                class="mb-3 hidden text-xs font-bold text-sad-tomato"
+                >Valid email required</label
+              >
+            </div>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              class="h-14 rounded-lg border border-gray-300 px-6 py-4 text-sad-grey"
+              placeholder="email@company.com"
+              autocomplete="off"
+            />
+          </div>
+          <button
+            type="submit"
+            class="h-14 w-full rounded-lg border bg-sad-dark-slate-grey text-sad-white hover:border-none hover:bg-gradient-to-l hover:from-sad-tomato hover:to-rose-400 hover:text-sad-white hover:shadow-lg hover:shadow-rose-300"
+            >Subscribe to monthly newsletter</button
+          >
+        </form>
       </section>
     </div>
-  </div>
+    <div
+      class="hidden h-[810px] w-[375px] bg-sad-white md:h-[510px] md:w-[500px] md:rounded-[2.5rem]"
+      id="confirmation"
+    >
+      <div class="mx-6 mt-36 md:mx-12 md:my-12">
+        <Image
+          src={iconsSuccess}
+          alt={"Success!"}
+          loading={"eager"}
+          class="mb-8"
+        />
+        <section>
+          <h2
+            class="mb-6 text-[2.5rem] font-bold leading-none text-sad-dark-slate-grey md:text-[3.5rem]"
+          >
+            Thanks for subscribing!
+          </h2>
+          <p class="mb-[17.3rem] text-sad-dark-slate-grey md:mb-12">
+            A confirmation email has been sent to <span
+              id="emailresponse"
+              class="font-bold"></span>. Please open it and click the button
+            inside to confirm your subscription
+          </p>
+          <button
+            id="dismiss"
+            class="h-14 w-full rounded-lg border bg-sad-dark-slate-grey text-sad-white hover:border-none hover:bg-gradient-to-l hover:from-sad-tomato hover:to-rose-400 hover:text-sad-white hover:shadow-lg hover:shadow-rose-300"
+            >Dismiss message</button
+          >
+        </section>
+      </div>
+    </div>
+  </main>
 </MainLayout>
 
 <script>
