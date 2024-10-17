@@ -1,11 +1,5 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
-import Image from "astro/components/Image.astro";
-
-import illustrationMobile from "@/assets/illustration-sign-up-mobile.svg";
-import illustrationDesktop from "@/assets/illustration-sign-up-desktop.svg";
-import iconList from "@/assets/icon-list.svg";
-import iconsSuccess from "@/assets/icon-success.svg";
 ---
 
 <MainLayout title="Frontend Mentor | Newsletter Sign Up">
@@ -15,16 +9,14 @@ import iconsSuccess from "@/assets/icon-success.svg";
       id="signup"
     >
       <div class="md:w-1/2">
-        <Image
-          src={illustrationMobile}
-          alt={"Sign Up"}
-          loading={"eager"}
+        <img
+          src="/illustration-sign-up-mobile.svg"
+          alt="Sign Up"
           class="md:hidden"
         />
-        <Image
-          src={illustrationDesktop}
-          alt={"Sign Up"}
-          loading={"eager"}
+        <img
+          src="/illustration-sign-up-desktop.svg"
+          alt="Sign Up"
           class="hidden md:block"
         />
       </div>
@@ -40,11 +32,11 @@ import iconsSuccess from "@/assets/icon-success.svg";
         <div
           class="items-top mb-10 grid grid-cols-[10%,90%] gap-2 text-sad-dark-slate-grey"
         >
-          <Image src={iconList} alt={"Checkmark"} loading={"eager"} />
+          <img src="/icon-list.svg" alt="Checkmark" />
           <p>Product discovery and building what matters</p>
-          <Image src={iconList} alt={"Checkmark"} loading={"eager"} />
+          <img src="/icon-list.svg" alt="Checkmark" />
           <p>Measuring to ensure updates are a success</p>
-          <Image src={iconList} alt={"Checkmark"} loading={"eager"} />
+          <img src="/icon-list.svg" alt="Checkmark" />
           <p>And much more!</p>
         </div>
         <form novalidate id="form">
@@ -84,12 +76,7 @@ import iconsSuccess from "@/assets/icon-success.svg";
       id="confirmation"
     >
       <div class="mx-6 mt-36 md:mx-12 md:my-12">
-        <Image
-          src={iconsSuccess}
-          alt={"Success!"}
-          loading={"eager"}
-          class="mb-8"
-        />
+        <img src="/icon-success.svg" alt="Success!" class="mb-8" />
         <section>
           <h2
             class="mb-6 text-[2.5rem] font-bold leading-none text-sad-dark-slate-grey md:text-[3.5rem]"
