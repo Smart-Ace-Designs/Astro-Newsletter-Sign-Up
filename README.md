@@ -10,7 +10,6 @@ This is a solution to the [Newsletter sign-up form with success message challeng
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -28,6 +27,7 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 
 ### Screenshot
+
 ![newsletter-sign-up](https://github.com/user-attachments/assets/aa578f5d-0ec2-4700-8c6c-c198748621f3)
 
 ### Links
@@ -48,11 +48,6 @@ Users should be able to:
 - CSS Grid
 - Bun
 - Mobile-first workflow
-
-### Useful resources
-
-- [Tailwind CSS Cheat Sheet](https://tailwindcomponents.com/cheatsheet/)
-- [Astro Server Actions](https://github.com/withastro/roadmap/blob/actions/proposals/0046-actions.md)
 
 ## Author
 
