@@ -5,7 +5,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
 <MainLayout title="Frontend Mentor | Newsletter Sign Up">
   <main class="flex min-h-screen items-center justify-center">
     <div
-      class="h-[840px] w-[375px] bg-sad-white md:flex md:h-[640px] md:w-[920px] md:flex-row-reverse md:items-center md:justify-center md:gap-4 md:rounded-[2.5rem]"
+      class="bg-theme-white h-[840px] w-[375px] md:flex md:h-[640px] md:w-[920px] md:flex-row-reverse md:items-center md:justify-center md:gap-4 md:rounded-[2.5rem]"
       id="signup"
     >
       <div class="md:w-1/2">
@@ -22,15 +22,15 @@ import MainLayout from "@/layouts/MainLayout.astro";
       </div>
       <section class="mx-7 my-7 md:w-1/2 md:px-8">
         <h1
-          class="mb-3 text-[2.5rem] font-bold text-sad-dark-slate-grey md:text-[3.5rem]"
+          class="text-theme-dark-slate-gray mb-3 text-[2.5rem] font-bold md:text-[3.5rem]"
         >
           Stay updated!
         </h1>
-        <p class="mb-7 text-sad-dark-slate-grey">
+        <p class="text-theme-dark-slate-gray mb-7">
           Join 60,000+ product managers receiving monthly updates on:
         </p>
         <div
-          class="items-top mb-10 grid grid-cols-[10%,90%] gap-2 text-sad-dark-slate-grey"
+          class="items-top text-theme-dark-slate-gray mb-10 grid grid-cols-[10%,90%] gap-2"
         >
           <img src="/icon-list.svg" alt="Checkmark" />
           <p>Product discovery and building what matters</p>
@@ -44,13 +44,13 @@ import MainLayout from "@/layouts/MainLayout.astro";
             <div class="flex justify-between">
               <label
                 for="email"
-                class="mb-3 text-xs font-bold text-sad-dark-slate-grey"
+                class="text-theme-dark-slate-gray mb-3 text-xs font-bold"
                 >Email address</label
               >
               <label
                 id="errormessage"
                 for="email"
-                class="mb-3 hidden text-xs font-bold text-sad-tomato"
+                class="text-theme-tomato mb-3 hidden text-xs font-bold"
                 >Valid email required</label
               >
             </div>
@@ -58,32 +58,32 @@ import MainLayout from "@/layouts/MainLayout.astro";
               id="email"
               type="email"
               name="email"
-              class="h-14 rounded-lg border border-gray-300 px-6 py-4 text-sad-grey"
+              class="text-theme-gray h-14 rounded-lg border border-gray-300 px-6 py-4"
               placeholder="email@company.com"
               autocomplete="off"
             />
           </div>
           <button
             type="submit"
-            class="h-14 w-full rounded-lg border bg-sad-dark-slate-grey text-sad-white hover:border-none hover:bg-gradient-to-l hover:from-sad-tomato hover:to-rose-400 hover:text-sad-white hover:shadow-lg hover:shadow-rose-300"
+            class="hover:from-theme-tomato bg-theme-dark-slate-gray text-theme-white hover:text-theme-white h-14 w-full rounded-lg border hover:border-none hover:bg-gradient-to-l hover:to-rose-400 hover:shadow-lg hover:shadow-rose-300"
             >Subscribe to monthly newsletter</button
           >
         </form>
       </section>
     </div>
     <div
-      class="hidden h-[810px] w-[375px] bg-sad-white md:h-[510px] md:w-[500px] md:rounded-[2.5rem]"
+      class="bg-theme-white hidden h-[810px] w-[375px] md:h-[510px] md:w-[500px] md:rounded-[2.5rem]"
       id="confirmation"
     >
       <div class="mx-6 mt-36 md:mx-12 md:my-12">
         <img src="/icon-success.svg" alt="Success!" class="mb-8" />
         <section>
           <h2
-            class="mb-6 text-[2.5rem] font-bold leading-none text-sad-dark-slate-grey md:text-[3.5rem]"
+            class="text-theme-dark-slate-gray mb-6 text-[2.5rem] font-bold leading-none md:text-[3.5rem]"
           >
             Thanks for subscribing!
           </h2>
-          <p class="mb-[17.3rem] text-sad-dark-slate-grey md:mb-12">
+          <p class="text-theme-dark-slate-gray mb-[17.3rem] md:mb-12">
             A confirmation email has been sent to <span
               id="emailresponse"
               class="font-bold"></span>. Please open it and click the button
@@ -91,7 +91,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
           </p>
           <button
             id="dismiss"
-            class="h-14 w-full rounded-lg border bg-sad-dark-slate-grey text-sad-white hover:border-none hover:bg-gradient-to-l hover:from-sad-tomato hover:to-rose-400 hover:text-sad-white hover:shadow-lg hover:shadow-rose-300"
+            class="hover:from-theme-tomato bg-theme-dark-slate-gray text-theme-white hover:text-theme-white h-14 w-full rounded-lg border hover:border-none hover:bg-gradient-to-l hover:to-rose-400 hover:shadow-lg hover:shadow-rose-300"
             >Dismiss message</button
           >
         </section>
@@ -120,10 +120,10 @@ import MainLayout from "@/layouts/MainLayout.astro";
     if (errorState) {
       errorLabel.classList.add("hidden");
       email.classList.remove(
-        "bg-sad-tomato",
-        "text-sad-tomato",
+        "bg-theme-tomato",
+        "text-theme-tomato",
         "bg-opacity-20",
-        "border-sad-tomato",
+        "border-theme-tomato",
       );
       email.value = "";
     }
@@ -147,20 +147,20 @@ import MainLayout from "@/layouts/MainLayout.astro";
     errorState = true;
     errorLabel.classList.remove("hidden");
     email.classList.add(
-      "bg-sad-tomato",
-      "text-sad-tomato",
+      "bg-theme-tomato",
+      "text-theme-tomato",
       "bg-opacity-20",
-      "border-sad-tomato",
+      "border-theme-tomato",
     );
   });
 
   dismiss?.addEventListener("click", () => {
     errorLabel.classList.add("hidden");
     email.classList.remove(
-      "bg-sad-tomato",
-      "text-sad-tomato",
+      "bg-theme-tomato",
+      "text-theme-tomato",
       "bg-opacity-20",
-      "border-sad-tomato",
+      "border-theme-tomato",
     );
     email.value = "";
     signup.classList.add("md:flex");
