@@ -1,11 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400 700;
-  src: url("/fonts/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
-  font-display: swap;
+@theme {
+  --color-theme-tomato: hsl(4, 100%, 67%);
+  --color-theme-dark-slate-gray: hsl(234, 29%, 20%);
+  --color-theme-charcoal-gray: hsl(235, 18%, 26%);
+  --color-theme-gray: hsl(231, 7%, 60%);
+  --color-theme-white: hsl(0, 0%, 100%);
+
+  --font-roboto: Roboto, sans-serif;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400 700;
+    src: url("/fonts/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+    font-display: swap;
+  }
 }

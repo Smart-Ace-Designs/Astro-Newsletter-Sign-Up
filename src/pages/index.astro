@@ -30,7 +30,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
           Join 60,000+ product managers receiving monthly updates on:
         </p>
         <div
-          class="items-top text-theme-dark-slate-gray mb-10 grid grid-cols-[10%,90%] gap-2"
+          class="items-top text-theme-dark-slate-gray mb-10 grid grid-cols-[10%_90%] gap-2"
         >
           <img src="/icon-list.svg" alt="Checkmark" />
           <p>Product discovery and building what matters</p>
@@ -65,7 +65,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
           </div>
           <button
             type="submit"
-            class="hover:from-theme-tomato bg-theme-dark-slate-gray text-theme-white hover:text-theme-white h-14 w-full rounded-lg border hover:border-none hover:bg-gradient-to-l hover:to-rose-400 hover:shadow-lg hover:shadow-rose-300"
+            class="hover:from-theme-tomato bg-theme-dark-slate-gray text-theme-white hover:text-theme-white h-14 w-full rounded-lg border hover:border-none hover:bg-linear-to-l hover:to-rose-400 hover:shadow-lg hover:shadow-rose-300"
             >Subscribe to monthly newsletter</button
           >
         </form>
@@ -79,7 +79,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
         <img src="/icon-success.svg" alt="Success!" class="mb-8" />
         <section>
           <h2
-            class="text-theme-dark-slate-gray mb-6 text-[2.5rem] font-bold leading-none md:text-[3.5rem]"
+            class="text-theme-dark-slate-gray mb-6 text-[2.5rem] leading-none font-bold md:text-[3.5rem]"
           >
             Thanks for subscribing!
           </h2>
@@ -91,7 +91,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
           </p>
           <button
             id="dismiss"
-            class="hover:from-theme-tomato bg-theme-dark-slate-gray text-theme-white hover:text-theme-white h-14 w-full rounded-lg border hover:border-none hover:bg-gradient-to-l hover:to-rose-400 hover:shadow-lg hover:shadow-rose-300"
+            class="hover:from-theme-tomato bg-theme-dark-slate-gray text-theme-white hover:text-theme-white h-14 w-full rounded-lg border hover:border-none hover:bg-linear-to-l hover:to-rose-400 hover:shadow-lg hover:shadow-rose-300"
             >Dismiss message</button
           >
         </section>
@@ -120,9 +120,8 @@ import MainLayout from "@/layouts/MainLayout.astro";
     if (errorState) {
       errorLabel.classList.add("hidden");
       email.classList.remove(
-        "bg-theme-tomato",
+        "bg-theme-tomato/20",
         "text-theme-tomato",
-        "bg-opacity-20",
         "border-theme-tomato",
       );
       email.value = "";
@@ -147,9 +146,8 @@ import MainLayout from "@/layouts/MainLayout.astro";
     errorState = true;
     errorLabel.classList.remove("hidden");
     email.classList.add(
-      "bg-theme-tomato",
+      "bg-theme-tomato/20",
       "text-theme-tomato",
-      "bg-opacity-20",
       "border-theme-tomato",
     );
   });
@@ -157,9 +155,8 @@ import MainLayout from "@/layouts/MainLayout.astro";
   dismiss?.addEventListener("click", () => {
     errorLabel.classList.add("hidden");
     email.classList.remove(
-      "bg-theme-tomato",
+      "bg-theme-tomato/20",
       "text-theme-tomato",
-      "bg-opacity-20",
       "border-theme-tomato",
     );
     email.value = "";
