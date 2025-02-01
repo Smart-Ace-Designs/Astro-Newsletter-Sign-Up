@@ -120,7 +120,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
     if (errorState) {
       errorLabel.classList.add("hidden");
       email.classList.remove(
-        "bg-theme-tomato/20",
+        "bg-theme-tomato-transparent",
         "text-theme-tomato",
         "border-theme-tomato",
       );
@@ -146,7 +146,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
     errorState = true;
     errorLabel.classList.remove("hidden");
     email.classList.add(
-      "bg-theme-tomato/20",
+      "bg-theme-tomato-transparent",
       "text-theme-tomato",
       "border-theme-tomato",
     );
@@ -155,7 +155,7 @@ import MainLayout from "@/layouts/MainLayout.astro";
   dismiss?.addEventListener("click", () => {
     errorLabel.classList.add("hidden");
     email.classList.remove(
-      "bg-theme-tomato/20",
+      "bg-theme-tomato-transparent",
       "text-theme-tomato",
       "border-theme-tomato",
     );
