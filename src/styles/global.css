@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@source inline("bg-theme-tomato-transparent");
+
 @theme {
   --color-theme-tomato: hsl(4, 100%, 67%);
   --color-theme-tomato-transparent: hsla(4, 100%, 67%, 0.2);
