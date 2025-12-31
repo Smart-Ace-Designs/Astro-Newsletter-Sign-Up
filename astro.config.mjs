@@ -21,7 +21,6 @@ export default defineConfig({
         cssVariable: "--font-roboto",
         weights: [400, 700],
         styles: ["normal"],
-        subsets: ["latin"],
       },
     ],
   },
