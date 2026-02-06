@@ -10,7 +10,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [],
   output: "server",
   adapter: netlify(),
   experimental: {
